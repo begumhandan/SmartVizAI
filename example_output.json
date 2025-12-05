@@ -1,0 +1,345 @@
+[
+    {
+        "best_chart_type": "Line Chart",
+        "why": "Shows the trend of Satis_Miktari over time (Tarih).",
+        "columns_used": [
+            "Tarih",
+            "Satis_Miktari",
+            "Kategori"
+        ],
+        "alternative_chart_types": [
+            "Area Chart",
+            "Streamgraph"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "data": {
+                "values": []
+            },
+            "mark": {
+                "type": "line",
+                "point": true,
+                "tooltip": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "Tarih",
+                    "type": "temporal",
+                    "title": "Tarih"
+                },
+                "y": {
+                    "field": "Satis_Miktari",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Kategori",
+                    "type": "nominal"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Bar Chart",
+        "why": "Compares Total Satis_Miktari across Kategori.",
+        "columns_used": [
+            "Kategori",
+            "Satis_Miktari"
+        ],
+        "alternative_chart_types": [
+            "Donut Chart",
+            "Treemap"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": {
+                "type": "bar",
+                "cornerRadiusEnd": 4,
+                "tooltip": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "Kategori",
+                    "type": "nominal",
+                    "sort": "-y"
+                },
+                "y": {
+                    "field": "Satis_Miktari",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Kategori",
+                    "legend": null
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Scatter Plot",
+        "why": "Correlation between Satis_Miktari and Kar.",
+        "columns_used": [
+            "Satis_Miktari",
+            "Kar",
+            "Kategori"
+        ],
+        "alternative_chart_types": [
+            "Bubble Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": {
+                "type": "circle",
+                "tooltip": true
+            },
+            "encoding": {
+                "x": {
+                    "field": "Satis_Miktari",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Kar",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Kategori",
+                    "type": "nominal"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Heatmap",
+        "why": "Sales intensity by Region (Bölge) and Category (Kategori).",
+        "columns_used": [
+            "Bölge",
+            "Kategori",
+            "Satis_Miktari"
+        ],
+        "alternative_chart_types": [
+            "Grouped Bar Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "rect",
+            "encoding": {
+                "x": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Kategori",
+                    "type": "nominal"
+                },
+                "color": {
+                    "field": "Satis_Miktari",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Boxplot",
+        "why": "Distribution of Kar across Kategori.",
+        "columns_used": [
+            "Kategori",
+            "Kar"
+        ],
+        "alternative_chart_types": [
+            "Violin Plot"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "boxplot",
+            "encoding": {
+                "x": {
+                    "field": "Kategori",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Kar",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Kategori"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Stacked Area Chart",
+        "why": "Composition of Satis_Miktari by Bölge over time.",
+        "columns_used": [
+            "Tarih",
+            "Satis_Miktari",
+            "Bölge"
+        ],
+        "alternative_chart_types": [
+            "Line Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "area",
+            "encoding": {
+                "x": {
+                    "field": "Tarih",
+                    "type": "temporal"
+                },
+                "y": {
+                    "field": "Satis_Miktari",
+                    "type": "quantitative",
+                    "stack": "normalize"
+                },
+                "color": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Donut Chart",
+        "why": "Proportion of Satis_Miktari by Bölge.",
+        "columns_used": [
+            "Bölge",
+            "Satis_Miktari"
+        ],
+        "alternative_chart_types": [
+            "Bar Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": {
+                "type": "arc",
+                "innerRadius": 50
+            },
+            "encoding": {
+                "theta": {
+                    "field": "Satis_Miktari",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Histogram",
+        "why": "Frequency distribution of Satis_Miktari.",
+        "columns_used": [
+            "Satis_Miktari"
+        ],
+        "alternative_chart_types": [
+            "Density Plot"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Satis_Miktari",
+                    "bin": true
+                },
+                "y": {
+                    "aggregate": "count"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Grouped Bar Chart",
+        "why": "Comparison of Kar by Bölge and Kategori side-by-side.",
+        "columns_used": [
+            "Bölge",
+            "Kategori",
+            "Kar"
+        ],
+        "alternative_chart_types": [
+            "Stacked Bar Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Kar",
+                    "aggregate": "mean"
+                },
+                "xOffset": {
+                    "field": "Kategori"
+                },
+                "color": {
+                    "field": "Kategori"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Stacked Bar Chart",
+        "why": "Total Satis_Miktari by Bölge, stacked by Kategori.",
+        "columns_used": [
+            "Bölge",
+            "Kategori",
+            "Satis_Miktari"
+        ],
+        "alternative_chart_types": [
+            "Grouped Bar Chart"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "bar",
+            "encoding": {
+                "x": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                },
+                "y": {
+                    "field": "Satis_Miktari",
+                    "aggregate": "sum"
+                },
+                "color": {
+                    "field": "Kategori"
+                }
+            }
+        }
+    },
+    {
+        "best_chart_type": "Bubble Chart",
+        "why": "Multivariate: Satis_Miktari vs Kar vs Size(Kar) colored by Bölge.",
+        "columns_used": [
+            "Satis_Miktari",
+            "Kar",
+            "Bölge"
+        ],
+        "alternative_chart_types": [
+            "Scatter Plot"
+        ],
+        "vega_lite_code": {
+            "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+            "mark": "circle",
+            "encoding": {
+                "x": {
+                    "field": "Satis_Miktari",
+                    "type": "quantitative"
+                },
+                "y": {
+                    "field": "Kar",
+                    "type": "quantitative"
+                },
+                "size": {
+                    "field": "Kar",
+                    "type": "quantitative"
+                },
+                "color": {
+                    "field": "Bölge",
+                    "type": "nominal"
+                }
+            }
+        }
+    }
+]
