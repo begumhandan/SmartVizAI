@@ -1,103 +1,112 @@
-SmartVizAI
+# 🚀 SmartVizAI
 
-Youtube Demo Video Link:https://youtu.be/26qW_9sGw_k
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+[![Vega-Lite](https://img.shields.io/badge/Vega--Lite-20232A?style=for-the-badge&logo=vega&logoColor=white)](https://vega.github.io/vega-lite/)
 
-SmartVizAI, Antigravity + React + Vite + Vega-Lite kullanılarak geliştirilmiş otonom bir veri görselleştirme motorudur.
-Kullanıcı sadece bir CSV/Excel dosyası yüklediğinde, sistem veriyi analiz eder ve Chartifier benzeri şekilde otomatik grafik önerileri sunar.
+**SmartVizAI**, Antigravity + React + Vite + Vega-Lite teknolojileri kullanılarak geliştirilmiş, **otonom bir veri görselleştirme motorudur**. Kullanıcı sadece bir CSV veya Excel dosyası yükler, sistem veriyi analiz eder ve en uygun grafik önerilerini otomatik olarak sunar.
 
-🔮 Proje Hakkında
+📺 [**Youtube Demo Video**](https://youtu.be/26qW_9sGw_k)
 
-Bu proje, Antigravity AI ile tasarladığım özel bir frontend mimarisi ve arayüz promptu kullanılarak oluşturuldu.
-Amaç, Chartifier AI görünümünde çalışan, tamamen tarayıcı içinde işleyen “akıllı grafik öneri sistemi” geliştirmekti.
+---
 
-Antigravity’e verdiğim prompt, şu özelliklerde bir sistem üretmesini sağladı:
+## 🔮 Proje Hakkında
 
-Dark tema + Glassmorphism premium UI
+Bu proje, modern veri analitik araçlarının (Chartifier, NotebookLM vb.) kullanıcı deneyimini tarayıcı tabanlı bir mimariyle sunmayı hedefler. **Antigravity AI** ile tasarlanan özel frontend mimarisi sayesinde, sunucu tarafı işlemeye ihtiyaç duymadan, tamamen **client-side** çalışan akıllı bir sistemdir.
 
-Orta kısımda komut/yükleme alanı
+**Temel Hedef:** Veri yükle -> Otomatik Analiz -> Anında Görselleştirme.
 
-Sol tarafta Chatifier tarzı navigation
+### Antigravity Prompt Stratejisi
+Proje, Antigravity'e verilen özel bir prompt ile şu özellikleri kazanmıştır:
+- **Dark Theme & Glassmorphism:** Premium ve modern bir arayüz.
+- **Frontend-Only:** Sunucu maliyeti olmadan çalışan mimari.
+- **Otomatik Kolon Tanıma:** Sayısal, kategorik ve tarihsel verileri ayırt etme.
+- **Akıllı Öneriler:** Veri setine uygun 10+ farklı grafik türü (Line, Bar, Scatter, Heatmap vb.).
 
-Yüklenen Excel/CSV → JSON dönüşümü
+---
 
-Kolon türü algılama
+## ✨ Özellikler
 
-10’dan fazla grafik önerisi
+### 📁 Çoklu Format Desteği
+- **CSV** ve **Excel (.xlsx)** dosyalarını sürükleyip bırakarak yükleyin.
+- Otomatik JSON dönüşümü ile anında işleme.
 
-Her önerinin altında Draw Chart butonu ile Vega-Lite çizimi
+### 🧠 Akıllı Veri Analizi
+Sistem, yüklenen verinin yapısını otomatik olarak algılar:
+- **Numeric:** Satış sayıları, sıcaklık değerleri vb.
+- **Categorical:** Ürün kategorileri, şehir isimleri vb.
+- **Datetime:** Gün, ay, yıl bilgileri.
 
-Bu README, geliştirme sürecinin tamamını ve dosya mimarisini belgelemek için hazırlandı.
+### 📊 Dinamik Grafik Önerileri
+Veri setinize en uygun grafikleri otomatik olarak belirler ve **Vega-Lite** spesifikasyonu üretir:
+- 📈 Line Chart
+- 📊 Bar & Stacked Bar Chart
+- 🔘 Scatter & Bubble Plot
+- 🔥 Heatmap
+- 📉 Histogram & Density Plot
+- 🍩 Donut Chart
+- 📦 Boxplot
 
-✨ Özellikler
+### 🎨 Premium UI/UX
+- **Glassmorphism:** Buzlu cam efektleri ve yumuşak gölgeler.
+- **Tailwind CSS:** Hızlı ve duyarlı tasarım.
+- **Animasyonlar:** Akıcı geçişler ve hover efektleri.
 
-📁 Dosya Yükleme
-CSV ve Excel (.xlsx) formatlarını destekler.
+---
 
-🧠 Otomatik Veri Analizi
-Kolon tiplerini algılar:
+## 🚀 Kurulum ve Çalıştırma
 
-Numeric
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
 
-Categorical
+1. **Repoyu Klonlayın:**
+   ```bash
+   git clone https://github.com/begumhandan/SmartVizAI.git
+   cd SmartVizAI
+   ```
 
-Datetime
+2. **Bağımlılıkları Yükleyin:**
+   ```bash
+   npm install
+   ```
 
-📊 Akıllı Görselleştirme Önerileri
-Sistem otomatik olarak 10+ farklı grafik tipi önerir:
-Line, Bar, Scatter, Bubble, Heatmap, Histogram, Boxplot, Density, Donut, Stacked Bar…
+3. **Geliştirme Sunucusunu Başlatın:**
+   ```bash
+   npm run dev
+   ```
 
-🎨 Premium UI
+4. **Tarayıcıda Açın:**
+   `http://localhost:5173` adresine gidin.
 
-Glassmorphism
+---
 
-Tailwind CSS
+## 🧩 Proje Mimarisi
 
-Minimal Chatifier AI görünümü
+| Dosya | Açıklama |
+|---|---|
+| `src/lib/analyzer.ts` | **Çekirdek Motor:** Veriyi analiz eder ve grafik önerilerini oluşturur. |
+| `src/components/FileUpload.tsx` | Dosya yükleme, okuma ve JSON dönüşüm işlemlerini yönetir. |
+| `src/components/ChartGrid.tsx` | Önerilen grafikleri grid yapısında listeler. |
+| `src/components/ChartCard.tsx` | Tekil grafik kartı bileşeni. Vega-Lite çizimini tetikler. |
+| `src/lib/vegaGenerator.ts` | Analiz sonuçlarına göre Vega-Lite JSON kodunu üreten modül. |
+| `src/lib/utils.ts` | Yardımcı fonksiyonlar ve tip tanımları. |
 
-Yumuşak animasyonlar
+---
 
-📈 Vega-Lite Entegrasyonu
-Tüm grafikler otomatik üretilen Vega-Lite JSON ile çizilir.
+## 📸 Ekran Görüntüleri
 
-🚀 Başlangıç
+*(Buraya projenin ekran görüntülerini ekleyebilirsiniz)*
 
-Bağımlılıkları yükle:
+---
 
-npm install
+## 🤝 Katkıda Bulunma
 
+1. Forklayın
+2. Feature branch oluşturun (`git checkout -b feature/YeniOzellik`)
+3. Commit atın (`git commit -m 'Yeni özellik eklendi'`)
+4. Pushlayın (`git push origin feature/YeniOzellik`)
+5. Pull Request açın
 
-Geliştirme sunucusunu başlat:
+---
 
-npm run dev
-
-
-Tarayıcıdan aç:
-http://localhost:5173
-
-🧩 Mimari
-Dosya	Açıklama
-src/lib/analyzer.ts	Yüklenen veriyi analiz edip grafik önerilerini oluşturan çekirdek motor.
-src/components/FileUpload.tsx	Excel/CSV dosyalarını okur ve JSON’a dönüştürür.
-src/components/ChartGrid.tsx	AI’ın önerdiği grafiklerin listesini ve Vega-Lite görsellerini gösterir.
-src/components/ChartCard.tsx	Her bir grafik önerisinin kart tasarımı ve Draw Chart tetikleyicisi.
-src/lib/vegaGenerator.ts	Önerilere göre Vega-Lite kodunu üreten modül.
-🤖 Antigravity Prompt Stratejisi (Özet)
-
-Bu proje Antigravity içinde özel bir prompt kullanılarak geliştirildi.
-Prompta şunlar istendi:
-
-Chartifier/NotebookLM tarzı arayüz
-
-Frontend-only bir sistem
-
-Veri yükleme + otomatik kolon tanıma
-
-10+ grafik önerisi üretme
-
-Vega-Lite JSON döndürme
-
-Sadece JSON formatında çıktı verme
-
-UI: dark theme + glassmorphism + shadowed cards
-
-Bu sayede uygulama tamamen otomasyonlu bir veri analiz aracı haline getirildi.
+**Geliştirici:** Begüm Handan
